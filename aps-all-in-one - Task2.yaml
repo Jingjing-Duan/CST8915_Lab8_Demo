@@ -66,6 +66,11 @@ spec:
           ports:
             - containerPort: 5672
             - containerPort: 15672
+          env:
+            - name: RABBITMQ_DEFAULT_USER
+              value: "username"
+            - name: RABBITMQ_DEFAULT_PASS
+              value: "password"
           volumeMounts:
             - name: rabbitmq-data
               mountPath: /var/lib/rabbitmq
